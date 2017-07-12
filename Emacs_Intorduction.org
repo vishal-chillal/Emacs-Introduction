@@ -1,0 +1,116 @@
+* Introduction to EMACS
+*** Emacs is a powerful and extensible text editor.
+
+** Session Goals
+   - To understand why we use Emacs
+   - To understand how you can use Emacs to enhance your productivity in editing
+   - To learn the basic Emacs commands
+   - To learn how to work with multiple buffers
+   - To learn how Emacs can be used as a work environment 
+
+** Emacs Background
+   - Emacs was inspired by the ideas of the TECO-macro editors TECMAC and TMACS.
+     - TECO is not only an editor but also an interpreted programming language for text manipulation.
+     - Arbitrary programs (called "macros") for searching and modifying text give it great power.
+   - The first and  most popular version of Emacs was a set of macros written in 1976 at MIT by Richard M Stallman.
+     - Richard Matthew Stallman is an American software freedom activist and programmer.
+       -Stallman launched the GNU Project, founded the Free Software Foundation,
+        developed the GNU Compiler Collection and GNU Emacs, and wrote the GNU General Public License.)
+   - Software that ensures its users receive the freedoms to use, study, distribute and modify
+     that softwar is termed free software.
+   - GNU Emacs is a free, portable, extensible text editor.
+     - portable means that it runs on many machines under many different operating systems,
+       so that you can probably count on being able to use the same editor no matter what machine you're using.\
+     - extensible means that you can not only customize all aspects of its usage
+       (from key bindings through fonts, colors, windows, mousage and menus),
+       but you can program Emacs to do entirely new things that its designers never thought of.
+
+** Working With Emacs
+
+*** Main Two Modes:
+    - The terminal-mode (from an ssh connection or without X Window)
+      - This mode has no toolbars, and all commands are given via keyboard.
+    - The graphical-mode (requires X Window)
+      - It looks similar to the terminal-mode, but with some added features for X.
+      - There is a toolbar across the top of the window, from which many common tasks can be accessed.
+
+*** Files, Buffers and Windows
+**** File:
+    - A file is the actual Unix file on disk. You are never editing this file.\
+      Rather, you can read a copy into Emacs to initialize a buffer, and write a copy of a buffer out to a file to save it.
+**** Buffer:
+     - A buffer is the internal data structure that holds the text you actually edit.
+     - Emacs can have any number of buffers active at any moment. Most, but by no means all, buffers are associated with a file.
+       Buffers have names; a buffer that has been initialized from a file is almost always named for that file.
+       This means, that when you save the buffer, it's saved to the proper file.
+     - At any given time exactly one buffer is selected:
+        - this is the buffer that your hardware cursor is in.
+        - this is where commands you type take effect (including self-insert commands).
+          Buffers can be deleted.
+        - deleting a buffer dosen't mean that we delete the file on disk
+          (thouth you may lose any editing changes you made if you don't save first).
+
+**** Window:
+     - A window is your view of a buffer.
+       Due to limited screen real-estate, you may not have room to view all your buffers at once.
+     - You can split the screen, horizontally or vertically,
+       into as many windows as you like (or at least have room for), each viewing a different buffer.
+     - It's also possible to have several windows viewing different portions of the same buffer.
+
+*** Opening Emacs:
+    - To create a file, type the name of the file that you wish to create after the emacs command.
+    - Example:
+        1. emacs myFirstProgram.c
+           # It will open the graphical mode by creating new window of emacs.
+	2. emacs -nw TryThis.c
+	   # we get the emacs will open in the terminal itself.
+	3. emacs
+	   # If we dont give file name, Emacs will show as SCRACH buffer, where we can write.
+     
+
+
+*** Emacs comes with a built in tutorial.
+    - To access it type F1 then T.
+    - The tutorial covers many of the basic tasks,
+    such as cursor movement to more advanced skills such as searching and replacing text. 
+*** The Parts of an Emacs Screen
+    1. Top (or main buffer):
+       Holds a copy of the file contents.
+    2. The status line (bottom of screen):
+       I.    --(unmodified)     **(modified)     %%(read-only)
+       II.   File name (or buffer name)
+       III.  The mode (more on this later)
+       IV.   The line number your cursor is on
+       V.    Where you are in the file (top, bottom, %)
+    3. The echo line or mini-buffer (under status line):
+       Used for issuing commands or displaying messages.
+*** Basic Editing
+**** Keys
+     Conventions for indicating key sequences
+     - C :: Control key -Hold down.
+     - M :: The "Meta" key is different on different systems:
+        * The Alt key on IBMs and SGIs
+        * The diamond key on Suns.
+        * The Escape key (E ) works on all systems. Press it and release.
+
+**** Entering text
+     - Just start typing. If the line becomes longer than width of the window,
+     Emacs will put a continuation marker in the right-most column and move to the next line.
+     - By default, you are in insert mode
+
+**** Moving around in a file
+     - Use the arrow keys to move the cursor.
+       * C-p for move upwords single line
+       * C-n for move downwords single line
+       * C-b backword one character
+       * C-f forword one character
+       * M-b for backword one word
+       * M-f for forword one word
+     - Use Page Down and Page Up to move forward and backward by one screen.
+       * C-v for Page down
+       * M-v for Page up
+     - Use Ctrl-Home and Ctrl-End to move to beginning and end of file.
+       * C-e to go at the end of line
+       * C-a to go at the begining of line
+	 
+**** Selecting, copying and deleting
