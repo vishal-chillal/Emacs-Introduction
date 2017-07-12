@@ -8,14 +8,15 @@
    - To learn how to work with multiple buffers
    - To learn how Emacs can be used as a work environment 
 
+
 ** Emacs Background
    - Emacs was inspired by the ideas of the TECO-macro editors TECMAC and TMACS.
      - TECO is not only an editor but also an interpreted programming language for text manipulation.
      - Arbitrary programs (called "macros") for searching and modifying text give it great power.
    - The first and  most popular version of Emacs was a set of macros written in 1976 at MIT by Richard M Stallman.
      - Richard Matthew Stallman is an American software freedom activist and programmer.
-       -Stallman launched the GNU Project, founded the Free Software Foundation,
-        developed the GNU Compiler Collection and GNU Emacs, and wrote the GNU General Public License.)
+     - Stallman launched the GNU Project, founded the Free Software Foundation,
+       developed the GNU Compiler Collection and GNU Emacs, and wrote the GNU General Public License.)
    - Software that ensures its users receive the freedoms to use, study, distribute and modify
      that softwar is termed free software.
    - GNU Emacs is a free, portable, extensible text editor.
@@ -25,8 +26,8 @@
        (from key bindings through fonts, colors, windows, mousage and menus),
        but you can program Emacs to do entirely new things that its designers never thought of.
 
-** Working With Emacs
 
+** Working With Emacs
 *** Main Two Modes:
     - The terminal-mode (from an ssh connection or without X Window)
       - This mode has no toolbars, and all commands are given via keyboard.
@@ -61,39 +62,40 @@
     - To create a file, type the name of the file that you wish to create after the emacs command.
     - Example:
         1. emacs myFirstProgram.c
-           # It will open the graphical mode by creating new window of emacs.
+           - It will open the graphical mode by creating new window of emacs.
 	2. emacs -nw TryThis.c
-	   # we get the emacs will open in the terminal itself.
+	   - we get the emacs will open in the terminal itself.
 	3. emacs
-	   # If we dont give file name, Emacs will show as SCRACH buffer, where we can write.
+	   - If we dont give file name, Emacs will show as SCRACH buffer, where we can write.
      
-
 
 *** Emacs comes with a built in tutorial.
     - To access it type F1 then T.
     - The tutorial covers many of the basic tasks,
-    such as cursor movement to more advanced skills such as searching and replacing text. 
+      such as cursor movement to more advanced skills such as searching and replacing text. 
 *** The Parts of an Emacs Screen
-    1. Top (or main buffer):
+    1. Top (or main buffer):-
        Holds a copy of the file contents.
-    2. The status line (bottom of screen):
-       I.    --(unmodified)     **(modified)     %%(read-only)
-       II.   File name (or buffer name)
-       III.  The mode (more on this later)
-       IV.   The line number your cursor is on
-       V.    Where you are in the file (top, bottom, %)
-    3. The echo line or mini-buffer (under status line):
+    2. The status line (bottom of screen):-
+       - I.    --(unmodified)     **(modified)     %%(read-only)
+       - II.   File name (or buffer name)
+       - III.  The mode (more on this later)
+       - IV.   The line number your cursor is on
+       - V.    Where you are in the file (top, bottom, %)
+    3. The echo line or mini-buffer (under status line):-
        Used for issuing commands or displaying messages.
 *** Basic Editing
 **** Keys
      Conventions for indicating key sequences
-     - C :: Control key -Hold down.
-     - M :: The "Meta" key is different on different systems:
-        * The Alt key on IBMs and SGIs
-        * The diamond key on Suns.
-        * The Escape key (E ) works on all systems. Press it and release.
+     - C :: => Control key -Hold down.
+     - M :: =>  The "Meta" key is different on different systems:
+       * The Alt key on IBMs and SGIs
+       * The diamond key on Suns.
+       * The Escape key (E ) works on all systems. Press it and release.
+     - Spc :: => space bar press and release.
+     - Del :: => delete or back space
 
-**** Entering text
+**** Entdsering text
      - Just start typing. If the line becomes longer than width of the window,
      Emacs will put a continuation marker in the right-most column and move to the next line.
      - By default, you are in insert mode
@@ -114,3 +116,14 @@
        * C-a to go at the begining of line
 	 
 **** Selecting, copying and deleting
+     - For Selecting text first we have to mark the position by
+       * M-spc for setting mark
+       * then we can use keys which we use for moving arround file for selecting text
+     - M-w   For copy
+     - C-w   For cut
+     - C-y   For pest
+     - C-x u For undo last command
+     - C-g   For quit/abort the command  
+     - C-d   For delete character at the position of cursor
+     - C-k   For cut all characters from the position of cursor to the end of line  
+       
