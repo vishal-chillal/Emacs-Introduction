@@ -1,14 +1,13 @@
 * Introduction to EMACS
 *** Emacs is a powerful and extensible text editor.
-
 ** Session Goals
    - To understand why we use Emacs
    - To understand how you can use Emacs to enhance your productivity in editing
    - To learn the basic Emacs commands
    - To learn how to work with multiple buffers
    - To learn how Emacs can be used as a work environment 
-
-
+     
+     
 ** Emacs Background
    - Emacs was inspired by the ideas of the TECO-macro editors TECMAC and TMACS.
      - TECO is not only an editor but also an interpreted programming language for text manipulation.
@@ -111,19 +110,74 @@
      - Use Page Down and Page Up to move forward and backward by one screen.
        * C-v for Page down
        * M-v for Page up
-     - Use Ctrl-Home and Ctrl-End to move to beginning and end of file.
+     - Use Ctrl-Home and Ctrl-End to move to beginning and end of lile.
        * C-e to go at the end of line
        * C-a to go at the begining of line
+     - jumping end of file and beginning if the file.
+       * M-< to go at beginning of file
+       * M-> to go at end of line
+     - jump to line.
+       * M-g g to jump on that line
 	 
-**** Selecting, copying and deleting
+**** Selecting, copying, deleting and pesting
      - For Selecting text first we have to mark the position by
        * M-spc for setting mark
        * then we can use keys which we use for moving arround file for selecting text
-     - M-w   For copy
-     - C-w   For cut
+     - M-w   For copy the selection
+     - C-w   For cut the selection
      - C-y   For pest
      - C-x u For undo last command
      - C-g   For quit/abort the command  
      - C-d   For delete character at the position of cursor
+     - M-d   For deleting next word
      - C-k   For cut all characters from the position of cursor to the end of line  
        
+**** Searching and Replacing
+     - The search begins when you type the first character, moves on as you continue typing.
+     - Searches ignore the case of the text.
+       * C-s For forword search
+       * C-r For backword search
+       * press the same keys to jump on next instance
+     - To replace some string from the whole file
+       * move cursor to top of file
+       * M-% then enter(return)
+       * now enter string which you want to replace and press enter
+       * enter with what you want to replace that string.
+       * then emacs will ask you some response like-
+	 - y change this one
+	 - n leave this one unchanged
+	 - ! change all the occurances without asking
+	 - q abort the replacement command
+
+** Customizing Emacs
+*** Emacs can be configured by adding a file named .emacs in your home directory
+*** When Emacs begins, it looks for and reads that file to obtain configuration information.
+    - Virtually all Emacs customization is done via Lisp code.
+    - You can modify variables which influence the way Emacs operates
+    - you can add new functions to Emacs (or override existing functions--replacing them with your own).
+*** Customization
+    - While experimenting with Emacs customization, you'll probably want to do it in a way that is temporary.
+    - If you do something horribly wrong, you can just C-x C-c to exit emacs and run it again.
+      Once you've figured out what changes you'd like to make permanent,
+    - you can add them to your very own .emacs file so that they take effect every time you start Emacs.
+
+    - ELPA (Emacs Lisp Package Archive)
+    - adding following line to your .emacs file, you will get the connected to the org from where you can download packages.
+    (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+    - after adding this link you have to restart emacs.
+      * for trying new things you can just type
+        - M-x try                     then select package to try
+	- M-x list-packages           this show show available packages and packages which are already installed
+          * [Enter] (package-menu-describe-package) Describe the package under cursor.
+          * [i]     (package-menu-mark-install)     mark for installation.
+          * [u]     (package-menu-mark-unmark)      unmark.
+          * [d]     (package-menu-mark-delete)      mark for deletion (removal of a installed package).
+          * [x]     (package-menu-execute)          for execute (start install/uninstall of marked items).
+          * [r]     (package-menu-refresh           refresh the list from server.  
+      * by adding the packages directly to your .emacs file you will get it done permenently.
+	- you can change / set themes
+	- manage tab size
+	- set/overwright key-bindings for different things
+	- set different modes with initial start
+    # ** Compiling in Emacs
+    # *** One of the nice features of Emacs is the ability to compile source code from within it.
