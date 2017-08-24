@@ -12,7 +12,7 @@
    - Emacs was inspired by the ideas of the TECO-macro editors TECMAC and TMACS.
      - TECO is not only an editor but also an interpreted programming language for text manipulation.
      - Arbitrary programs (called "macros") for searching and modifying text give it great power.
-   - The first and  most popular version of Emacs was a set of macros written in 1976 at MIT by Richard M Stallman.
+   - The first and most popular version of Emacs was a set of macros written in 1976 at MIT by Richard M Stallman.
      - Richard Matthew Stallman is an American software freedom activist and programmer.
      - Stallman launched the GNU Project, founded the Free Software Foundation,
        developed the GNU Compiler Collection and GNU Emacs, and wrote the GNU General Public License.)
@@ -94,7 +94,7 @@
      - Spc :: => space bar press and release.
      - Del :: => delete or back space
 
-**** Entdsering text
+**** Entering text
      - Just start typing. If the line becomes longer than width of the window,
      Emacs will put a continuation marker in the right-most column and move to the next line.
      - By default, you are in insert mode
@@ -163,7 +163,7 @@
 
     - ELPA (Emacs Lisp Package Archive)
     - adding following line to your .emacs file, you will get the connected to the org from where you can download packages.
-    (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+      (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
     - after adding this link you have to restart emacs.
       * for trying new things you can just type
         - M-x try                     then select package to try
@@ -179,5 +179,4 @@
 	- manage tab size
 	- set/overwright key-bindings for different things
 	- set different modes with initial start
-    # ** Compiling in Emacs
-    # *** One of the nice features of Emacs is the ability to compile source code from within it.
+	  
